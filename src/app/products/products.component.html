@@ -1,3 +1,8 @@
-<p>
-  products works!
-</p>
+<h3>Products</h3>
+<table>
+  <tr><th> Id</th> <th>code</th><th>Name</th><th></th><th></th></tr>
+  <tr *ngFor="let product of allProducts" >
+        <td>{{product.id}}</td> <td>{{product.code}}</td> <td>{{product.name}}</td>
+
+  </tr>
+</table> 
