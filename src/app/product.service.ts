@@ -4,7 +4,10 @@ import { Product } from './product';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch'
-
+import { Company } from './company';
+import { COMPANY } from './moch-heroes';
+import { Group } from './group';
+import { GROUP } from './moch-heroes';
 @Injectable()
 export class ProductService {
 
@@ -17,6 +20,16 @@ export class ProductService {
     return this.http.get(this.productssUrl)
     .map(this.extractData)
     .catch(this.handleError);
+  }
+
+
+
+  getCompany(): Company[] {
+    return COMPANY;
+  }
+
+  getGroup(): Group[] {
+    return GROUP;
   }
 
 

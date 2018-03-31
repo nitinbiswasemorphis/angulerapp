@@ -1,4 +1,19 @@
 <h3>Products</h3>
+<select class='select-option' required [(ngModel)]='groupSelected'  (ngModelChange)='onGroupSelected($event)'>
+  <option class='option'  [value]="0">All Groups</option>
+  <option class='option' *ngFor='let group of groups' [value]="group.id">{{group.name}}</option>
+
+</select>
+
+<select class='select-option' required [(ngModel)]='companySelected' (ngModelChange)='onOptionsSelected($event)'>
+  <option class='option'  [value]="0" selected>All Companies</option>
+  <option class='option' *ngFor='let company of companies' [value]="company.id">{{company.name}}</option>
+
+</select>
+
+
+
+
 <table>
   <tr><th> Id</th> <th>code</th><th>Name</th><th></th><th></th></tr>
   <tr *ngFor="let product of allProducts" >
